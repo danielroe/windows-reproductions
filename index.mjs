@@ -7,8 +7,8 @@ import { resolvePathSync } from 'mlly'
 console.log({
   'import.meta.url': import.meta.url,
   'fileURLToPath(import.meta.url)': fileURLToPath(import.meta.url),
-  "nodeResolve(dirname(fileURLToPath(import.meta.url)), 'app/plugins/router')": nodeResolve(dirname(fileURLToPath(import.meta.url)), 'app/plugins/router'),
-  "patheResolve(dirname(fileURLToPath(import.meta.url)), 'app/plugins/router')": patheResolve(dirname(fileURLToPath(import.meta.url)), 'app/plugins/router')
+  "nodeResolve(dirname(fileURLToPath(import.meta.url)), 'plugins/router')": nodeResolve(dirname(fileURLToPath(import.meta.url)), 'plugins/router'),
+  "patheResolve(dirname(fileURLToPath(import.meta.url)), 'plugins/router')": patheResolve(dirname(fileURLToPath(import.meta.url)), 'plugins/router')
 })
 
 const resolves = { nodeResolve, patheResolve }
@@ -19,7 +19,7 @@ for (const r in resolves) {
   try {
     console.log(
       resolvePathSync(
-        resolves[r](dirname(fileURLToPath(import.meta.url)), 'app/plugins/router'),
+        resolves[r](dirname(fileURLToPath(import.meta.url)), 'plugins/router'),
         { extensions: ['.ts', '.js'] }
       )
     )
