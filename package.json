@@ -7,6 +7,10 @@
   },
   "license": "MIT",
   "packageManager": "pnpm@9.15.3",
+  "dependencies": {
+    "mlly": "^1.7.3",
+    "pathe": "^2.0.1"
+  },
   "devDependencies": {
     "@actions/core": "^1.11.1"
   }
